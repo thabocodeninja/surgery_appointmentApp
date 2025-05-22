@@ -33,7 +33,6 @@ export const PatientForm = () => {
     },
   })
 
-
   const onSubmit = async (values: z.infer<typeof UserFormValidation>) => {
     setIsLoading(true)
 
@@ -54,5 +53,41 @@ export const PatientForm = () => {
     }
     setIsLoading(false)
   }
-  
+return (
+  <Form {...form}>
+    <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-6">
+      <section className="mb-12 space-y-4">
+       <h1 className="header">Hi there</h1>
+       <p className="text-dark-700">Get started with appointment</p>
+      </section>
+      <CustomFormField 
+      fieldType={FormFieldType.INPUT}
+      control={form.control}
+      name="name"
+      label="Full name"
+      placeholder="Thabo Ledwaba"
+      iconSrc="/assets/icons/user.svg"
+      iconAlt="user"
+      />
+
+      <CustomFormField
+      fieldType={FormFieldType.INPUT}
+      control={form.control}
+      name="email"
+      label="Email"
+      placeholder="thabo@gmail.com"
+      iconSrc="/assets/icons/email.svg"
+      iconAlt="email"
+      />
+     <CustomFormField
+     fieldType={FormFieldType.PHONE_INPUT}
+     control={form.control}
+     name="phone"
+     label="Phone number"
+     placeholder="+27 073 067 9087"
+     />
+     <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
+    </form>
+  </Form>
+)
 }
