@@ -350,14 +350,12 @@ const RegisterForm = ({ user }: { user: User }) => {
           <div className="mb-9 space-y-1">
             <h2 className="sub-header">Consent and Privacy</h2>
           </div>
-
           <CustomFormField
             fieldType={FormFieldType.CHECKBOX}
             control={form.control}
             name="treatmentConsent"
             label="I consent to receive treatment for my health condition."
           />
-
           <CustomFormField
             fieldType={FormFieldType.CHECKBOX}
             control={form.control}
@@ -365,7 +363,6 @@ const RegisterForm = ({ user }: { user: User }) => {
             label="I consent to the use and disclosure of my health
             information for treatment purposes."
           />
-
           <CustomFormField
             fieldType={FormFieldType.CHECKBOX}
             control={form.control}
